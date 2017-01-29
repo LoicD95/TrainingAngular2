@@ -16,6 +16,12 @@ export class LoginComponent  {
     ) { }
 
     login() {
-        return this.authService.authenticate(this.model);
+        alert("Connexion demandée");
+        console.log(this.authService.authenticate(this.model) instanceof Promise);
+        return this.authService.authenticate(this.model).then(function(onfulfilled){
+            alert("Sucess :" + onfulfilled);
+        }).catch(function(onrejected){
+            alert("Rejet : " + onrejected);
+        });
     }
 }

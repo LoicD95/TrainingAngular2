@@ -22,6 +22,18 @@ export class RegisterComponent {
     register() {
         if (this.ngForm.form.invalid) {
             return;
+        }else{
+            this.registrationService.usernameExists(this.model.userName).then(function(onfulfilled){
+                alert("Success : " + onfulfilled);
+                if(!onfulfilled){
+                    //message : user deja existant
+                    
+                }else{
+
+                }
+            }).catch(function(onrejected){
+                alert("Rejet : " + onrejected);
+            });
         }
     }
 }
