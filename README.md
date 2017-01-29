@@ -1,6 +1,5 @@
 # iti-network
 
-tests
 ## Démarrage
 - `WINDOWS SEULEMENT`: exécuter `npm install -g webpack webpack-dev-server typescript`
 - exécuter `npm install` pour installer les modules
@@ -52,7 +51,7 @@ tests
 #### Level II
 
 4. Sélectionner par défaut le premier channel de la liste
-5. Ajouter ajouter les nouveaux channels dynamiquement
+5. Ajouter les nouveaux channels dynamiquement
 
 ### Post 
 
@@ -109,6 +108,6 @@ Le clic doit rediriger sur le bon channel et scroller jusqu'au poste concerné
 ### Reminder
 
 - Tous les composants ajoutés doivent être réexportés dans src/app/components/index.ts
-- les composants créer (via snipet) ne doivent pas avoir de moduleId
+- les composants crées (via snipet) ne doivent pas avoir de moduleId
 - documentation [angular](https://angular.io/docs/ts/latest/)
-- tous services créé doit être ajouter au providers dans src/app/app.module.ts
+- tout service créé doit être ajouter au providers dans src/app/app.module.ts
