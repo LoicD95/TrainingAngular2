@@ -14,6 +14,8 @@ export class RegisterComponent {
 
     model = new UserRegistration();
 
+    userExist: boolean = false;
+
     constructor(
         private registrationService: RegistrationService,
         private router : Router
@@ -23,13 +25,15 @@ export class RegisterComponent {
         if (this.ngForm.form.invalid) {
             return;
         }else{
-            this.registrationService.usernameExists(this.model.userName).then(function(onfulfilled){
+            this.registrationService.usernameExists(this.model.userName).then((onfulfilled) => {
                 alert("Success : " + onfulfilled);
-                if(!onfulfilled){
-                    //message : user deja existant
-                    
+                if(onfulfilled){
+                    //message : user already exist
+                   this.userExist = true;                
                 }else{
-
+                    //Register user
+                    this.registrationService.register(this.model);
+                    this.router.navigate(['login']);
                 }
             }).catch(function(onrejected){
                 alert("Rejet : " + onrejected);
