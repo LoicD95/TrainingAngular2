@@ -27,13 +27,15 @@ export class SocialFeedComponent implements OnInit {
                         this.items = items
                     });
             });
-        //Listening if post is create
+        //Listening if post is created
         this.postSocket.onPost((post) => {
             if( post!= null){
                 console.log("Un nouveau post a été crée ! ");
                 this.items.push(post);
             }
         });
+        //Listening if comment is created
+
     }
     
 }
