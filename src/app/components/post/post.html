@@ -8,7 +8,13 @@
         {{post.creationTime | date: 'dd/MM/yyyy'}}
     </div>
     <div class="right">
-        <div class="actions"><a [class.liked]="post.liked"><i class="glyphicon glyphicon-heart"></i></a></div>
+        <div class="actions">
+          <button (click) = "like()"> 
+                <a [class.liked]="post.liked">
+                    <i class="glyphicon glyphicon-heart"></i>
+                </a>
+          </button>
+        </div>
     </div>
 </div>
 <div class="body">
