@@ -11,6 +11,10 @@
             <div class="modal-body">
                 <div class="form-group" >
                     <label for="name">Nom</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+                     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                        Name is required
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
