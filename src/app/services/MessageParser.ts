@@ -22,6 +22,7 @@ export class MessageParser {
 
         if(pictureMatche) {
            // TODO
+           return new PicturePostContent(pictureMatche.input);
         }
 
         return null;

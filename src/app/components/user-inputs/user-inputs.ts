@@ -18,7 +18,7 @@ export class UserInputsComponent {
     }
 
     send() {
-        alert('Création d\'un post');
+        console.log('Création d\'un post');
          return this.postService.post(this.channelId, this.message).then((onfulfilled) => {
             console.log("Success :" + onfulfilled);
         }).catch((onrejected) => {
