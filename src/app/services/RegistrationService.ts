@@ -14,7 +14,7 @@ export class RegistrationService {
 
     register(newUser: UserRegistration): Promise<any> {
         return this.http
-            .post(`${this.config.url}/api/authentication/register`, newUser)
+            .post(`${this.config.url}/api/authentication/register`, {username : newUser.userName, password : newUser.password})
             .map(resp => resp.json())
             .toPromise();
     }

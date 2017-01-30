@@ -17,9 +17,9 @@ export class LoginComponent  {
 
     login() {
         alert("Connexion demandée");
-        console.log(this.authService.authenticate(this.model) instanceof Promise);
         return this.authService.authenticate(this.model).then(function(onfulfilled){
             alert("Sucess :" + onfulfilled);
+            this.router.navigate(['/']);
         }).catch(function(onrejected){
             alert("Rejet : " + onrejected);
         });

@@ -23,7 +23,7 @@ export class AuthenticationService {
 
     authenticate(user: UserLogin): Promise<AuthenticatedUser> {
         return this.http
-            .post(`${this.config.url}/api/authentication/login`, user)
+            .post(`${this.config.url}/api/authentication/login`, {username : user.userName, password : user.password})
             .map( r => r.json() )
             .do( (result: AuthenticationResult) => {
                 if (result.succeeded) {
