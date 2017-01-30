@@ -35,7 +35,16 @@ export class SocialFeedComponent implements OnInit {
             }
         });
         //Listening if comment is created
-
+        this.postSocket.onComment((comment) => {
+            if( comment!= null){
+                console.log("Un nouveau commentaire a été crée ! ");
+                this.items.forEach(post => {
+                    if(post.id === comment.post.id){
+                        post.comments.push(comment);
+                    }
+                });
+            }
+        });
     }
     
 }

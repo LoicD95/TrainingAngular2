@@ -18,10 +18,10 @@ export class PostComponent {
 
     ngOnInit() {
         this.post.content = this.parser.parse(this.post);
-        if(this.post.content != null){
-            console.log(this.post.content);
-            console.log(this.post.content.type);
-        }
+        // if(this.post.content != null){
+        //     console.log(this.post.content);
+        //     console.log(this.post.content.type);
+        // }
     }
 
     like() {
