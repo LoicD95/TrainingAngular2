@@ -9,11 +9,9 @@
     </div>
     <div class="right">
         <div class="actions">
-          <button (click) = "like()"> 
-                <a [class.liked]="post.liked">
+                <a [class.liked]="post.liked" (click) = "like()">
                     <i class="glyphicon glyphicon-heart"></i>
                 </a>
-          </button>
         </div>
     </div>
 </div>
