@@ -7,4 +7,5 @@ import { Channel } from 'models';
 })
 export class MenuComponent {
     @Input() channels: Channel[] = [];
+
 }

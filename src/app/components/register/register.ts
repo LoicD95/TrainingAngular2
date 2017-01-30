@@ -25,8 +25,6 @@ export class RegisterComponent {
         if (this.ngForm.form.invalid) {
             return;
         }else{
-            console.log(this.model);
-            console.log(this.model.userName);
             this.registrationService.usernameExists(this.model.userName).then((onfulfilled) => {
                 alert("Success : " + onfulfilled);
                 if(onfulfilled){
@@ -37,7 +35,7 @@ export class RegisterComponent {
                     this.registrationService.register(this.model);
                     this.router.navigate(['login']);
                 }
-            }).catch(function(onrejected){
+            }).catch((onrejected) => {
                 alert("Rejet : " + onrejected);
             });
         }

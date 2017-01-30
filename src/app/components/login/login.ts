@@ -17,10 +17,10 @@ export class LoginComponent  {
 
     login() {
         alert("Connexion demandée");
-        return this.authService.authenticate(this.model).then(function(onfulfilled){
+        return this.authService.authenticate(this.model).then((onfulfilled) => {
             alert("Sucess :" + onfulfilled);
             this.router.navigate(['/']);
-        }).catch(function(onrejected){
+        }).catch((onrejected) => {
             alert("Rejet : " + onrejected);
         });
     }
