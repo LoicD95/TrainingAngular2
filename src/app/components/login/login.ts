@@ -18,10 +18,10 @@ export class LoginComponent  {
     login() {
         alert("Connexion demandée");
         return this.authService.authenticate(this.model).then((onfulfilled) => {
-            alert("Sucess :" + onfulfilled);
+            console.log("Success :" + onfulfilled);
             this.router.navigate(['/']);
         }).catch((onrejected) => {
-            alert("Rejet : " + onrejected);
+            console.log("Rejet : " + onrejected);
         });
     }
 }

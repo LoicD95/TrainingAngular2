@@ -13,10 +13,16 @@ export class UserInputsComponent {
     message:string;
 
     constructor(
-        private postervice: PostService
+        private postService: PostService
     ) {
     }
 
     send() {
+        alert('Création d\'un post');
+         return this.postService.post(this.channelId, this.message).then((onfulfilled) => {
+            console.log("Success :" + onfulfilled);
+        }).catch((onrejected) => {
+            console.log("Rejet : " + onrejected);
+        });
     }
 }
