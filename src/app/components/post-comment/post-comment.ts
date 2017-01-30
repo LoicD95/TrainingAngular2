@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { PostService } from '../../services/index';
-import { Comment } from 'models';
 import { Post } from '../../models';
 
 @Component({

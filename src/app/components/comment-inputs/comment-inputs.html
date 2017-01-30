@@ -1,7 +1,7 @@
 <form >
-    <textarea name="message" class="form-control" rows="2" [(ngModel)]="message"></textarea>
+    <textarea name="commentMessage" class="form-control" rows="2" [(ngModel)]="commentMessage"></textarea>
     <div class="comment-inputs-action">
-        <button class="btn btn-default" [disabled]="!message" type="submit" (click) = "sendComment()">Commenter</button>
+        <button class="btn btn-default" [disabled]="!commentMessage" type="submit" (click) = "sendComment()">Commenter</button>
     </div>
 </form>
 <style>

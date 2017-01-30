@@ -9,7 +9,7 @@ import { Post } from '../../models';
 })
 export class CommentInputsComponent{
     @Input() post: Post;
-    message:string;
+    commentMessage:string;
 
     constructor(
         private postService: PostService
@@ -17,8 +17,9 @@ export class CommentInputsComponent{
 
     sendComment() {
         console.log('Création d\'un commentaire');
-         return this.postService.comment(this.post, this.message).then((onfulfilled) => {
+         return this.postService.comment(this.post, this.commentMessage).then((onfulfilled) => {
             console.log("Success :" + onfulfilled);
+            this.commentMessage = '';
         }).catch((onrejected) => {
             console.log("Rejet : " + onrejected);
         });
