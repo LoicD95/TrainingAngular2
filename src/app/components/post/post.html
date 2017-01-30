@@ -20,6 +20,9 @@
     </div>
 </div>
 <div class="footer">
+<!-- Comments display -->
+<post-comment *ngFor="let comment of post.comments" [comment] = comment></post-comment>
+<comment-inputs [post] = "post"></comment-inputs>
     
 </div>
 <style>
