@@ -61,8 +61,8 @@ export class SocialFeedComponent implements OnInit {
         this.postSocket.onLike((like) => {
             if(like != null) {
                 this.items.forEach(comment => {
+                    console.log("Un nouveau like sur un commentaire a été crée ! ");
                     if(comment.comments === like.post.comments) {
-                        console.log("passed here");
                         comment.liked = true;
                     }
                 });
