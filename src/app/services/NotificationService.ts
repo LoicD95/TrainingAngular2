@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { PostSocketService } from './PostSocketService';
-import { NotificationsService } from 'angular2-notifications';
+import { NotificationsService, PushNotificationsService } from 'angular2-notifications';
 
 @Injectable()
 export class NotificationService {
     private postSocket: PostSocketService;
     private notificationsService: NotificationsService;
+    private pushNotificationsService: PushNotificationsService;
     private notifications: string[] = [];
 
-    constructor(postSocketService: PostSocketService, notificationsService: NotificationsService) {
+    constructor(postSocketService: PostSocketService, notificationsService: NotificationsService, pushNotificationsService: PushNotificationsService) {
         this.postSocket = postSocketService;
         this.notificationsService = notificationsService;
+        this.pushNotificationsService = pushNotificationsService;
         //We listen
         this.notification();
     }
@@ -20,6 +22,9 @@ export class NotificationService {
         if (localStorage.getItem("notifications") !== null) {
             this.notifications = JSON.parse(localStorage["notifications"]);
         }
+
+        //Ask permission from user to display notification
+        this.pushNotificationsService.requestPermission();
 
         //Listening if post is created
         this.postSocket.onPost((post) => {
@@ -31,6 +36,7 @@ export class NotificationService {
                 //SAVE array in localstorage
                 localStorage["notifications"] = JSON.stringify(this.notifications);
                 this.notificationPopup('Post', notification);
+                this.notificationPush('Post', notification);
             }
         });
         //Listening if comment is created
@@ -41,6 +47,7 @@ export class NotificationService {
 
                 localStorage["notifications"] = JSON.stringify(this.notifications);
                 this.notificationPopup('Commentaire', notification);
+                this.notificationPush('Commentaire', notification);
             }
         });
         // Listening if a like on Post is created
@@ -51,6 +58,7 @@ export class NotificationService {
                 this.notifications.unshift(notification);
                 localStorage["notifications"] = JSON.stringify(this.notifications);
                 this.notificationPopup('Likeuh', notification);
+                this.notificationPush('Likeuh', notification);
             }
         });
         // Listening if a channel is created
@@ -61,6 +69,7 @@ export class NotificationService {
 
                 localStorage["notifications"] = JSON.stringify(this.notifications);
                 this.notificationPopup('Channel', notification);
+                this.notificationPush('Channel', notification);
             }
         });
         // Listening if a user is connecting
@@ -71,6 +80,7 @@ export class NotificationService {
 
                 localStorage["notifications"] = JSON.stringify(this.notifications);
                 this.notificationPopup('Connection', notification);
+                this.notificationPush('Connection', notification);
             }
         });
     }
@@ -90,6 +100,13 @@ export class NotificationService {
                 clickToClose: true,
                 maxLength: 100
             }
+        )
+    }
+
+    notificationPush(title: string, message: string) {
+        this.pushNotificationsService.create(title, { body: message }).subscribe(
+            res => console.log(res),
+            err => console.log(err)
         )
     }
 

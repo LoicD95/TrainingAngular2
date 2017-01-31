@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Channel } from 'models';
 import { ChannelService } from 'services';
-import {PostSocketService} from 'services'
+import { PostSocketService } from 'services'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -11,12 +11,15 @@ import { Router } from '@angular/router';
 })
 export class SocialAppComponent implements OnInit {
     channels: Channel[] = [];
-    
+    public options = {
+        position: ["bottom", "left"]
+    }
+
     constructor(
         private channelService: ChannelService,
         private route: ActivatedRoute,
-        private router : Router,
-        private postSocketService : PostSocketService
+        private router: Router,
+        private postSocketService: PostSocketService
     ) {
     }
 
@@ -26,7 +29,7 @@ export class SocialAppComponent implements OnInit {
         if (this.channels[0] != undefined) this.router.navigate(['channel/' + this.channels[0].id]);
         //Listening if channel is created
         this.postSocketService.onNewChannel((channel) => {
-            if( channel!= null){
+            if (channel != null) {
                 console.log("Un nouveau channel a été crée ! ");
                 this.channels.push(channel);
             }
