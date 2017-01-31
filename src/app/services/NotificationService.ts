@@ -49,6 +49,24 @@ export class NotificationService {
                 localStorage["notifications"] = JSON.stringify(this.notifications);
             }
         });
+        // Listening if a channel is created
+        this.postSocket.onNewChannel((channel) => {
+            if(channel != null) {
+                let notification :string = `Le channel : ${channel.name} a été créé.`
+                this.notifications.unshift(notification);
+
+                localStorage["notifications"] = JSON.stringify(this.notifications);
+            }
+        });
+        // Listening if a user is connecting
+        this.postSocket.onUserConnect((user) => {
+            if(user != null) {
+                let notification :string = `L'utilisateur ${user.username} s'est connecté.`
+                this.notifications.unshift(notification);
+
+                localStorage["notifications"] = JSON.stringify(this.notifications);         
+            }
+        });
     }
 
     getNotifications(){
