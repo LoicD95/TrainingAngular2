@@ -27,4 +27,7 @@ export class PostComponent {
         // }
     }
 
+    like() {
+        console.log("passage dans le like");
+    }
 }
