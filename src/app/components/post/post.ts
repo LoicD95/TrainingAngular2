@@ -18,9 +18,6 @@ export class PostComponent {
 
     ngOnInit() {
         this.post.content = this.parser.parse(this.post);
-        // this.post.comments.forEach(comment =>{
-        //     comment.content = this.parser.parse(comment);
-        // });
         // if(this.post.content != null){
         //     console.log(this.post.content);
         //     console.log(this.post.content.type);
@@ -28,7 +25,7 @@ export class PostComponent {
     }
 
     like() {
-        console.log("passage dans le like");
+        console.log("Un post a été like");
         this.postService.like(this.post);
     }
 }
