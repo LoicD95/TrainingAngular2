@@ -45,6 +45,16 @@ export class SocialFeedComponent implements OnInit {
                 });
             }
         });
+        // Listening if a like is created
+        this.postSocket.onLike((like) => {
+            if(like != null) {
+                this.items.forEach(post => {
+                    if(post.id === like.post.id) {
+                        post.liked = true;
+                    }
+                })
+            }
+        });
     }
     
 }
