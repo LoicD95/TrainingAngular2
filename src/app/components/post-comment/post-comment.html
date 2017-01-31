@@ -6,7 +6,7 @@
        {{comment.user.username}}
     </div>
     <div class="creationTime">
-        {{comment.creationTime | date: 'dd/MM/yyyy'}}
+        {{comment.creationTime | date : 'dd/MM/yyyy : HH:mm'}}
     </div>
     <div class="right">
         <div class="actions"><a [class.liked]="comment.liked"><i class="glyphicon glyphicon-heart"></i></a></div>
@@ -45,6 +45,9 @@
     .username, .comment {
         font-weight: bold;
         padding: 0 15px;
+    }
+    .creationTime{
+        width : 280px;
     }
     .right {
         width: 100%;

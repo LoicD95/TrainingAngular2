@@ -37,6 +37,7 @@ import { authenticatedHttpFactory } from './services/AuthenticatedHttp'
     services.PostSocketService,
     services.MessageParser,
     services.AuthenticationService,
+    services.NotificationService,
     { 
       provide: services.LoggedUser, 
       useFactory: (auth: services.AuthenticationService) => auth.user ,

@@ -5,7 +5,7 @@
         {{post.user.username}}
     </div>
     <div class="creationTime">
-        {{post.creationTime | date: 'dd/MM/yyyy'}}
+        {{post.creationTime | date: 'dd/MM/yyyy : HH:mm'}}
     </div>
     <div class="right">
         <div class="actions">
@@ -58,6 +58,9 @@
     .username {
         font-weight: bold;
         padding: 0 15px;
+    }
+    .creationTime{
+        width : 250px;
     }
     .right {
         width: 100%;
