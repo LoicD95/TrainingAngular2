@@ -1,4 +1,6 @@
-<div class="item"></div>
+<div class="item" *ngFor="let notification of notifications">
+    {{notification}}
+</div>
 <style>
     :host {
         display: block;

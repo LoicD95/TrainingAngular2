@@ -71,7 +71,7 @@
 
 ### Level III
 10. Pouvoir parser plusieurs type de contenus dans un seul poste
-11. Remplacer les liens http par des balises <a>...</a>.
+11. Remplacer les liens http par des balises <a>...</a>. [x]
 
 ### Commentaires
 
@@ -87,12 +87,12 @@
 ### Activités et notifications 
 
 ### Level I
-1. Créer un NotificationService
-2. Lister les activités dans le menu à droite
-3. Ajouter une activité lors d'un nouveau poste via le NotificationService
-4. Ajouter une activité lors d'un commentaire sur un poste via le NotificationService
+1. Créer un NotificationService [x]
+2. Lister les activités dans le menu à droite [x]
+3. Ajouter une activité lors d'un nouveau poste via le NotificationService [x]
+4. Ajouter une activité lors d'un commentaire sur un poste via le NotificationService [x]
 5. Ajouter une activité lorsqu'un membre se connecte via le NotificationService
-6. Ajouter une activité lors d'un like via le NotificationService
+6. Ajouter une activité lors d'un like via le NotificationService [x]
 7. Ajouter une activité lors de l'ajout d'un channel via le NotificationService
 
 ### Level II
