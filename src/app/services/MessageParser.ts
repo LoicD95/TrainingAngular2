@@ -22,7 +22,6 @@ export class MessageParser {
         const pictureMatche = pictureRegex.exec(post.message);
         const videoMatche = videoRegex.exec(post.message);
         const httpMatche = httpRegex.exec(post.message);
-        console.log(httpMatche);
 
         if(pictureMatche) {
            return new PicturePostContent(pictureMatche.input);
