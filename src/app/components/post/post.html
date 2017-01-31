@@ -29,7 +29,9 @@
         <div *ngIf="post.content.type == 'video'">
             <video-post-content [postContent] = "post.content"></video-post-content>
         </div>
-        
+        <div *ngIf="post.content.type == 'http'">
+            <http-post-content [postContent] = "post.content"></http-post-content>
+        </div>
     </div>
 </div>
 <div class="footer">

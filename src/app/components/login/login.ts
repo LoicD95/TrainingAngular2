@@ -16,7 +16,6 @@ export class LoginComponent  {
     ) { }
 
     login() {
-        alert("Connexion demandée");
         return this.authService.authenticate(this.model).then((onfulfilled) => {
             console.log("Success :" + onfulfilled);
             this.router.navigate(['/']);
