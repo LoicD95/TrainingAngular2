@@ -25,7 +25,7 @@ export class PostComponent {
     }
 
     like() {
-        console.log("passage dans le like");
+        console.log("Un post a été like");
         this.postService.like(this.post);
     }
 }

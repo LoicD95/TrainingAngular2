@@ -31,7 +31,7 @@ export class SocialFeedComponent implements OnInit {
         this.postSocket.onPost((post) => {
             if( post!= null){
                 console.log("Un nouveau post a été crée ! ");
-                this.items.push(post);
+                this.items.unshift(post);
             }
         });
         //Listening if comment is created
@@ -48,6 +48,7 @@ export class SocialFeedComponent implements OnInit {
         // Listening if a like on Post is created
         this.postSocket.onLike((like) => {
             if(like != null) {
+                console.log("Un nouveau like a été crée ! ");
                 this.items.forEach(post => {
                     if(post.id === like.post.id) {
                         post.liked = true;

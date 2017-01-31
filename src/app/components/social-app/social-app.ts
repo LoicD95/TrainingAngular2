@@ -24,7 +24,7 @@ export class SocialAppComponent implements OnInit {
         this.channels = await this.channelService.getAll();
         // Redirect toward the first channel
         if (this.channels[0] != undefined) this.router.navigate(['channel/' + this.channels[0].id]);
-        //Listening if channel is create
+        //Listening if channel is created
         this.postSocketService.onNewChannel((channel) => {
             if( channel!= null){
                 console.log("Un nouveau channel a été crée ! ");

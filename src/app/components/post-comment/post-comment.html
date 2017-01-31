@@ -1,6 +1,9 @@
 <div class="header">
+    <div class="comment">
+       Commentaire
+    </div>
     <div class="username">
-        {{comment.user.username}}
+       {{comment.user.username}}
     </div>
     <div class="creationTime">
         {{comment.creationTime | date: 'dd/MM/yyyy'}}
@@ -10,7 +13,19 @@
     </div>
 </div>
 <div class="body">
-    <pre class="message">{{comment.message}}</pre>
+    <div *ngIf="comment.content === null">
+             <pre class="message">{{comment.message}}</pre>
+    </div>
+    <div *ngIf="comment.content">
+        <div *ngIf="comment.content.type == 'picture'">
+            <picture-post-content [postContent] = "comment.content"></picture-post-content>
+        </div>
+        <div *ngIf="comment.content.type == 'youtube'">
+            <youtube-post-content [postContent] = "comment.content"></youtube-post-content>
+        </div>
+        <div *ngIf="comment.content.type == 'video'">
+            <video-post-content [postContent] = "comment.content"></video-post-content>
+        </div>
 </div>
 <div class="footer">
     
@@ -27,7 +42,7 @@
         padding: 15px;
         display: flex;
     }
-    .username {
+    .username, .comment {
         font-weight: bold;
         padding: 0 15px;
     }
