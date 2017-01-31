@@ -91,16 +91,16 @@
 2. Lister les activités dans le menu à droite [x]
 3. Ajouter une activité lors d'un nouveau poste via le NotificationService [x]
 4. Ajouter une activité lors d'un commentaire sur un poste via le NotificationService [x]
-5. Ajouter une activité lorsqu'un membre se connecte via le NotificationService
+5. Ajouter une activité lorsqu'un membre se connecte via le NotificationService [x]
 6. Ajouter une activité lors d'un like via le NotificationService [x]
-7. Ajouter une activité lors de l'ajout d'un channel via le NotificationService
+7. Ajouter une activité lors de l'ajout d'un channel via le NotificationService [x]
 
 ### Level II
-8. Afficher une popup de notification avec [angular2-notifications](https://github.com/flauc/angular2-notifications)
-9. Persister les activités dans le [localStorage](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage)
+8. Afficher une popup de notification avec [angular2-notifications](https://github.com/flauc/angular2-notifications) [x]
+9. Persister les activités dans le [localStorage](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage) [x]
 
 ### Level III
-10. utiliser [angular2-notifications](https://github.com/flauc/angular2-notifications) pour afficher des notifications avec chrome
+10. utiliser [angular2-notifications](https://github.com/flauc/angular2-notifications) pour afficher des notifications avec chrome [x]
 11. Si l'activité concerne un poste (nouveau poste, commentaire sur un poste, like d'un poste) rendre l'activité clicable. 
 Le clic doit rediriger sur le bon channel et scroller jusqu'au poste concerné
 
