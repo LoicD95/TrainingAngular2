@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Channel } from 'models';
 import { ChannelService } from 'services';
-import { PostSocketService } from 'services'
+import { PostSocketService, AuthenticationService } from 'services'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -19,6 +19,7 @@ export class SocialAppComponent implements OnInit {
         private channelService: ChannelService,
         private route: ActivatedRoute,
         private router: Router,
+        private authService: AuthenticationService,
         private postSocketService: PostSocketService
     ) {
     }
@@ -34,5 +35,9 @@ export class SocialAppComponent implements OnInit {
                 this.channels.push(channel);
             }
         });
+    }
+
+    logout(){
+        this.authService.logout();
     }
 }
