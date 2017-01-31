@@ -90,6 +90,14 @@ export class PicturePostContent extends PostContent<MediaContent>{
     }
 }
 
+export class HttpPostContent extends PostContent<MediaContent>{
+    constructor(httpUrl:string) {
+        super('http', {
+            mediaUrl: httpUrl
+        });
+    }
+}
+
 export class YoutubePostContent extends PostContent<YoutubeContent>{
     constructor(videoId:string) {
         super('youtube', {
