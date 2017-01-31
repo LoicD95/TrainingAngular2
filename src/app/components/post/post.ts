@@ -18,6 +18,9 @@ export class PostComponent {
 
     ngOnInit() {
         this.post.content = this.parser.parse(this.post);
+        // this.post.comments.forEach(comment =>{
+        //     comment.content = this.parser.parse(comment);
+        // });
         // if(this.post.content != null){
         //     console.log(this.post.content);
         //     console.log(this.post.content.type);
